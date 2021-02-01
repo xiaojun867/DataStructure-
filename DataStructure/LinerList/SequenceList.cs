@@ -146,7 +146,7 @@ namespace DataStructure.LinerList
             }
         }
 
-        public void DelElem(T t)
+        public void DelElem1(T t)
         {
             int k = 0;
             for (int i = 0; i < this.Length; i++)
@@ -158,6 +158,22 @@ namespace DataStructure.LinerList
                 //}
             }
             this.Length = k;
+        }
+        public void DelElem2(T t)
+        {
+            int k = 0;
+            for (int i = 0; i < this.Length; i++)
+            {
+                //if (Data[i] == t)
+                //{
+                //    k++;
+                //}
+                //else
+                //{
+                //    Data[i - k] = Data[i];
+                //}
+            }
+            this.Length -= k;
         }
     }
 }
