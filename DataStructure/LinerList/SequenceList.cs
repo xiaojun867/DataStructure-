@@ -111,14 +111,14 @@ namespace DataStructure.LinerList
                 Console.WriteLine("线性表已满");
                 return;
             }
-            if (index < 1 || index > Data.Length+1)
+            if (index < 1 || index > this.Length + 1)
             {
                 Console.WriteLine("index超出数组范围");
                 return;
             }
             else
             {
-                for (int i = Data.Length; i >index; i--)
+                for (int i = this.Length; i > index - 1; i--)
                 {
                     Data[i] = Data[i - 1];
                 }
@@ -127,5 +127,37 @@ namespace DataStructure.LinerList
             }
         }
 
+        public T ListDelete(int index)
+        {
+            if (index < 1 || index > this.Length)
+            {
+                Console.WriteLine("index超出数组范围");
+                return default(T);
+            }
+            else
+            {
+                T t = Data[index - 1];
+                for (int i = index - 1; i < this.Length - 1; i++)
+                {
+                    Data[i] = Data[i + 1];
+                }
+                this.Length--;
+                return t;
+            }
+        }
+
+        public void DelElem(T t)
+        {
+            int k = 0;
+            for (int i = 0; i < this.Length; i++)
+            {
+                //if (Data[i] != t)
+                //{
+                //    Data[k] = Data[i];
+                //    k++;
+                //}
+            }
+            this.Length = k;
+        }
     }
 }
