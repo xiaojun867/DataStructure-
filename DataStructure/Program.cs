@@ -15,13 +15,19 @@ namespace DataStructure
             //list.Move2(5,6,2,7,8);
 
             SingleLinkedList<int> list = new SingleLinkedList<int>();
-            list.CreatListF(3, 8, 2, 7, 1, 5, 3, 4, 6, 0);
+            list.CreatListF(1,2,3);
 
-            LinkedList<int> ll = new LinkedList<int>();
-            ll.AddLast(1);
-            ll.AddLast(2);
-        
+            list.DestroyList();
+            //LinkedList<int> ll = new LinkedList<int>();
+            //ll.AddLast(1);
+            //ll.AddLast(2);
+            //foreach (var item in ll)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
+            //Console.WriteLine(ll.Count);
+            //List
 
         }
     }
