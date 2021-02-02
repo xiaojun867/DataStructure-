@@ -175,5 +175,71 @@ namespace DataStructure.LinerList
             }
             this.Length -= k;
         }
+
+
+        public void Move1(params int[] arrData)
+        {
+            int pivot = arrData[0];
+            int k = arrData.Length - 1;
+            int temp = 0;
+            for (int i = 0; i <= k; i++)
+            {
+                if (arrData[i] > pivot)
+                {
+                    for (int j = k; j >= i; j--)
+                    {
+                        k--;
+                        if (arrData[j] <= pivot)
+                        {
+                            temp = arrData[i];
+                            arrData[i] = arrData[j];
+                            arrData[j] = temp;
+                            break;
+                        }
+                    }
+                }
+            }
+            arrData[0] = arrData[k];
+            arrData[k] = pivot;
+            for (int i = 0; i < arrData.Length; i++)
+            {
+                Console.Write(arrData[i]);
+            }
+
+        }
+        public void Move2(params int[] arrData)
+        {
+            int pivot = arrData[0];
+            int i = 0;
+            int j = arrData.Length - 1;
+            while (i < j)
+            {
+                for (; j > i; j--)
+                {
+                    if (arrData[j] <= pivot)
+                    {
+                        arrData[i] = arrData[j];
+                        break;
+                    }
+                }
+                for (; i < j; i++)
+                {
+                    if (arrData[i] > pivot)
+                    {
+                        arrData[j] = arrData[i];
+                        break;
+                    }
+                }
+            }
+            if (i == j)
+            {
+                arrData[i] = pivot;
+            }
+
+            for (int x= 0; x < arrData.Length; x++)
+            {
+                Console.Write(arrData[x]);
+            }
+        }
     }
 }
