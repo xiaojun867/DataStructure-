@@ -10,7 +10,10 @@ namespace DataStructure.LinerList
     public class SequenceList<T>
     {
         private T[] Data { get; set; }
-        private int Length { get; set; }
+        private int _length;
+        public int Length { get { return _length; } }
+
+        public T this[int index] { get { return Data[index]; } set { Data[index] = value; } }
         public SequenceList(int maxSize, params T[] t)
         {
             Data = new T[maxSize];
@@ -27,21 +30,21 @@ namespace DataStructure.LinerList
             {
                 Data[i] = t[i];
             }
-            this.Length = t.Length;
+            this._length = t.Length;
         }
 
         public void InitList()
         {
-            this.Length = 0;
+            this._length = 0;
         }
         public void DestroyList()
         {
-            this.Length = 0;
+            this._length = 0;
             this.Data = null;
         }
         public bool ListEmpty()
         {
-            return this.Length == 0;
+            return this._length == 0;
         }
         public int ListLength()
         {
@@ -77,28 +80,27 @@ namespace DataStructure.LinerList
         public (bool, int) LocateElem(T t)
         {
             #region for
-            //for (int i = 0; i < this.Length; i++)
-            //{
-            //    if (Data[i] == t)
-            //    {
-            //        return (true,i+1);
-            //    }
-            //}
-            //return (false,0);
+            for (int i = 0; i < this.Length; i++)
+            {
+                if (object.Equals(Data[i], t))
+                {
+                    return (true, i + 1);
+                }
+            }
             #endregion
             #region While
             //int i = 0;
-            //while (i<this.Length&&Data[i]!=t)
+            //while (i < this.Length &&object.Equals(Data[i], t))
             //{
             //    i++;
             //}
             //if (i >= this.Length)
             //{
-            //    return (false,0);
+            //    return (false, 0);
             //}
             //else
             //{
-            //    return (true,i+1);
+            //    return (true, i + 1);
             //}
             #endregion
             return (false, 0);
@@ -123,7 +125,7 @@ namespace DataStructure.LinerList
                     Data[i] = Data[i - 1];
                 }
                 Data[index - 1] = t;
-                this.Length++;
+                this._length++;
             }
         }
 
@@ -141,7 +143,7 @@ namespace DataStructure.LinerList
                 {
                     Data[i] = Data[i + 1];
                 }
-                this.Length--;
+                this._length--;
                 return t;
             }
         }
@@ -151,29 +153,29 @@ namespace DataStructure.LinerList
             int k = 0;
             for (int i = 0; i < this.Length; i++)
             {
-                //if (Data[i] != t)
-                //{
-                //    Data[k] = Data[i];
-                //    k++;
-                //}
+                if (object.Equals(Data[i],t))
+                {
+                    Data[k] = Data[i];
+                    k++;
+                }
             }
-            this.Length = k;
+            this._length = k;
         }
         public void DelElem2(T t)
         {
             int k = 0;
             for (int i = 0; i < this.Length; i++)
             {
-                //if (Data[i] == t)
-                //{
-                //    k++;
-                //}
-                //else
-                //{
-                //    Data[i - k] = Data[i];
-                //}
+                if (object.Equals(Data[i], t))
+                {
+                    k++;
+                }
+                else
+                {
+                    Data[i - k] = Data[i];
+                }
             }
-            this.Length -= k;
+            this._length -= k;
         }
 
 
@@ -236,7 +238,7 @@ namespace DataStructure.LinerList
                 arrData[i] = pivot;
             }
 
-            for (int x= 0; x < arrData.Length; x++)
+            for (int x = 0; x < arrData.Length; x++)
             {
                 Console.Write(arrData[x]);
             }

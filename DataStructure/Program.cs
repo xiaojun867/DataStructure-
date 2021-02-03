@@ -8,26 +8,18 @@ namespace DataStructure
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            //SequenceList<int> list = new SequenceList<int>(5, 2, 3, 4, 5);
-            //list.Move1(3, 8, 2, 7, 1, 5, 3, 4, 6, 0);
-            //Console.WriteLine("************************");
-            //list.Move2(5,6,2,7,8);
+            Console.WriteLine("Hello DataStructure!");
+            Console.WriteLine("SequenceList");
 
+            Console.WriteLine("SingleLinkedList");
             SingleLinkedList<int> list = new SingleLinkedList<int>();
-            list.CreatListF(1,2,3);
-
-            list.DestroyList();
-            //LinkedList<int> ll = new LinkedList<int>();
-            //ll.AddLast(1);
-            //ll.AddLast(2);
-            //foreach (var item in ll)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            //Console.WriteLine(ll.Count);
-            //List
+            list.CreatListL(2, 5, 4, 456, 2, 35, 57, 343, 4677, 343, 5);
+            //Console.WriteLine($"获取单链表中最大的节点{list.GetMaxNode(list)}");
+            //Console.WriteLine($"删除单链表中最大的节点");
+            //list.DelMaxNode(list);
+           
+            list.Reverse(list);
+            list.DispList();
 
         }
     }
