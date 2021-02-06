@@ -12,14 +12,15 @@ namespace DataStructure
             Console.WriteLine("SequenceList");
 
             Console.WriteLine("SingleLinkedList");
-            SingleLinkedList<int> list = new SingleLinkedList<int>();
-            list.CreatListL(2, 5, 4, 456, 2, 35, 57, 343, 4677, 343, 5);
+            SingleLinkedList<string> list = new SingleLinkedList<String>();
+            list.CreatListL("a1","b1","a2","b2");
             //Console.WriteLine($"获取单链表中最大的节点{list.GetMaxNode(list)}");
             //Console.WriteLine($"删除单链表中最大的节点");
             //list.DelMaxNode(list);
            
-            list.Reverse(list);
-            list.DispList();
+           //list.Split(list);
+
+            
 
         }
     }

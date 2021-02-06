@@ -222,6 +222,45 @@ namespace DataStructure.LinerList
         {
             
         }
+
+        /// <summary>
+        /// 重组
+        /// </summary>
+        /// <param name="list"></param>
+        public void Split(SingleLinkedList<T> list)
+        {
+            var p = list.Head.Next;
+            var list1 = list.Head;
+            var point = list1;
+            var list2 = new Node<T>();
+
+            while (p != null)
+            {
+                point.Next = p;
+                point = p;
+
+                p = p.Next;
+                var q = p.Next;
+                                                      
+                list2.Next = p;
+
+                p = q;
+            }
+           point.Next = null;
+            while (list1 != null)
+            {
+                Console.WriteLine($"List1:{list1.Data}");
+                list1 = list1.Next;
+            }
+            while (list2 != null)
+            {
+                Console.WriteLine($"List2:{list2.Data}");
+                list2 = list2.Next;
+            }
+
+        }
+
+
     }
     public class Node<T>
     {
