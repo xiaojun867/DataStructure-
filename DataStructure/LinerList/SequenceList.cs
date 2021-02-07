@@ -153,7 +153,7 @@ namespace DataStructure.LinerList
             int k = 0;
             for (int i = 0; i < this.Length; i++)
             {
-                if (object.Equals(Data[i],t))
+                if (object.Equals(Data[i], t))
                 {
                     Data[k] = Data[i];
                     k++;
@@ -242,6 +242,48 @@ namespace DataStructure.LinerList
             {
                 Console.Write(arrData[x]);
             }
+        }
+
+        /// <summary>
+        /// 荷兰国旗问题
+        /// </summary>
+        /// <param name="arrData"></param>
+        public void Move3(params int[] arrData)
+        {
+            int i = -1;
+            int k = arrData.Length;
+            int j = 0;
+            while (j < k)
+            {
+                if (arrData[j] == 0)
+                {
+                    i++;
+                    swap(ref arrData[i], ref arrData[j]);
+                    j++;
+                }
+                else if (arrData[j] == 2)
+                {
+                    k--;
+                    swap(ref arrData[k], ref arrData[j]);
+                }
+                else
+                {
+                    j++;
+                }
+            }
+
+            for (int x = 0; x < arrData.Length; x++)
+            {
+                Console.WriteLine(arrData[x]);
+            }
+        }
+
+        public void swap(ref int a, ref int b)
+        {
+            int temp = 0;
+            temp = a;
+            a = b;
+            b = temp;
         }
     }
 }

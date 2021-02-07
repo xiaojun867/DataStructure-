@@ -212,6 +212,22 @@ namespace DataStructure.LinerList
         /// <param name="list"></param>
         public void Sort(SingleLinkedList<int> list)
         {
+            var p = list.Head.Next.Next;
+            var pre = list.Head.Next;
+            list.Head.Next.Next = null;
+            var q = new Node<int>();
+            while (p != null)
+            {
+                q = p.Next;
+                pre = list.Head;
+                while (pre.Next != null && pre.Next.Data < p.Data)
+                {
+                    pre = pre.Next;
+                }
+                p.Next = pre.Next;
+                pre.Next = p;
+                p = q;
+            }
 
         }
         /// <summary>
@@ -220,8 +236,19 @@ namespace DataStructure.LinerList
         /// <param name="list"></param>
         public void Reverse(SingleLinkedList<T> list)
         {
-            
+            var p = list.Head.Next;
+            var pre = list.Head;
+            list.Head.Next = null;
+            var q = new Node<T>();
+            while (p != null)
+            {
+                q = p.Next;
+                p.Next = pre.Next;
+                pre.Next = p;
+                p = q;
+            }
         }
+
 
         /// <summary>
         /// 重组
@@ -241,12 +268,12 @@ namespace DataStructure.LinerList
 
                 p = p.Next;
                 var q = p.Next;
-                                                      
+
                 list2.Next = p;
 
                 p = q;
             }
-           point.Next = null;
+            point.Next = null;
             while (list1 != null)
             {
                 Console.WriteLine($"List1:{list1.Data}");
@@ -260,7 +287,64 @@ namespace DataStructure.LinerList
 
         }
 
+        /// <summary>
+        /// 荷兰国旗问题
+        /// </summary>
+        /// <param name="list"></param>
+        public void Move(SingleLinkedList<int> list)
+        {
+            var p = list.Head.Next;
+            #region 尾插法
+            //var list1 = list.Head;
+            //var r1 = list1;
 
+            //Node<int> list2 = null;
+            //var r2 = list2;
+            //Node<int> list3 = null;
+            //var r3 = list3;
+
+
+            //while (p != null)
+            //{
+            //    var q = p.Next;
+            //    if (p.Data == 0)
+            //    {
+            //        r1.Next = p;
+            //        r1 = p;
+            //    }
+            //    else if (p.Data == 1)
+            //    {
+            //        if (list2 == null)
+            //        {
+            //            list2 = p;
+            //            r2 = p;
+            //        }
+            //        else
+            //        {
+            //            r2.Next = p;
+            //            r2 = p;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (list3 == null)
+            //        {
+            //            list3 = p;
+            //            r3 = p;
+            //        }
+            //        else
+            //        {
+            //            r3.Next = p;
+            //            r3 = p;
+            //        }
+            //    }
+            //    p = q;
+            //}
+            //r1.Next = r2.Next = r3.Next = null;
+            //r1.Next = list2;
+            //r2.Next = list3;
+            #endregion
+        }
     }
     public class Node<T>
     {
