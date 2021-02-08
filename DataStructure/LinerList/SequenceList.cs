@@ -9,7 +9,7 @@ namespace DataStructure.LinerList
     /// </summary>
     public class SequenceList<T>
     {
-        private T[] Data { get; set; }
+        public T[] Data { get; set; }
         private int _length;
         public int Length { get { return _length; } }
 
@@ -177,8 +177,6 @@ namespace DataStructure.LinerList
             }
             this._length -= k;
         }
-
-
         public void Move1(params int[] arrData)
         {
             int pivot = arrData[0];
@@ -243,7 +241,6 @@ namespace DataStructure.LinerList
                 Console.Write(arrData[x]);
             }
         }
-
         /// <summary>
         /// 荷兰国旗问题
         /// </summary>

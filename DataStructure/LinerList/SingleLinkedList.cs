@@ -7,8 +7,8 @@ namespace DataStructure.LinerList
 {
     public class SingleLinkedList<T>
     {
-        private int _count;
-        private Node<T> Head = new Node<T>();
+        public int _count;
+        public Node<T> Head = new Node<T>();
         public int Count { get { return _count; } }
         public void CreatListF(params T[] arrT)
         {
