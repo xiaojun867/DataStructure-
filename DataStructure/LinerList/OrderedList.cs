@@ -35,6 +35,12 @@ namespace DataStructure.LinerList
         }
 
 
+        /// <summary>
+        /// 二路归并
+        /// </summary>
+        /// <param name="listA"></param>
+        /// <param name="listB"></param>
+        /// <param name="listC"></param 
         public void UnionList(SequenceList<int> listA, SequenceList<int> listB, SequenceList<int> listC)
         {
             int a = 0;
@@ -70,5 +76,10 @@ namespace DataStructure.LinerList
             
         }
 
+
+        public void UnionList(SingleLinkedList<int> listA, SingleLinkedList<int> listB, SingleLinkedList<int> listC)
+        {
+
+        }
     }
 }

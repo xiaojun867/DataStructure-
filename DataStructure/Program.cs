@@ -48,12 +48,21 @@ namespace DataStructure
             //list.ListInsert(listLink, 6);
 
 
-            SequenceList<int> listA = new SequenceList<int>(10);
-            listA.CreateList(1, 3, 5);
-            SequenceList<int> listB = new SequenceList<int>(10);
-            listB.CreateList(2, 4, 6, 8);
+            //SequenceList<int> listA = new SequenceList<int>(10);
+            //listA.CreateList(1, 3, 5);
+            //SequenceList<int> listB = new SequenceList<int>(10);
+            //listB.CreateList(2, 4, 6, 8);
 
-            SequenceList<int> listC = new SequenceList<int>(10);
+            //SequenceList<int> listC = new SequenceList<int>(10);
+            //OrderedList list = new OrderedList();
+
+
+            SingleLinkedList<int> listA = new SingleLinkedList<int>();
+            listA.CreatListL(1, 3, 5);
+            SingleLinkedList<int> listB = new SingleLinkedList<int>();
+            listB.CreatListL(2, 4, 6, 8);
+
+            SingleLinkedList<int> listC = new SingleLinkedList<int>();
             OrderedList list = new OrderedList();
             list.UnionList(listA, listB, listC);
 
