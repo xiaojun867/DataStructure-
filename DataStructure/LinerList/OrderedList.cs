@@ -19,7 +19,7 @@ namespace DataStructure.LinerList
                 list.Data[j] = list.Data[j - 1];
             }
             list.Data[i] = e;
-       
+
         }
         public void ListInsert(SingleLinkedList<int> list, int e)
         {
@@ -61,7 +61,7 @@ namespace DataStructure.LinerList
                     c++;
                 }
             }
-            while(a < listA.Length)
+            while (a < listA.Length)
             {
                 listC[c] = listA[a];
                 a++;
@@ -73,13 +73,208 @@ namespace DataStructure.LinerList
                 b++;
                 c++;
             }
-            
+
+        }
+        public void UnionList(SingleLinkedList<int> listA, SingleLinkedList<int> listB, SingleLinkedList<int> listC)
+        {
+            var pA = listA.Head.Next;
+            var pB = listB.Head.Next;
+            var pC = listC.Head;
+            var r = pC;
+            while (pA != null && pB != null)
+            {
+                if (pA.Data < pB.Data)
+                {
+                    var q = pA.Next;
+
+                    pA.Next = r.Next;
+                    r.Next = pA;
+
+                    r = pA;
+                    pA = q;
+                }
+                else
+                {
+                    var q = pB.Next;
+
+                    pB.Next = r.Next;
+                    r.Next = pB;
+
+                    r = pB;
+                    pB = q;
+                }
+            }
+            while (pA != null)
+            {
+                var q = pA.Next;
+                pA.Next = r.Next;
+                r.Next = pA;
+                r = pA;
+                pA = q;
+            }
+            while (pB != null)
+            {
+                var q = pB.Next;
+                pB.Next = r.Next;
+                r.Next = pB;
+                r = pB;
+                pB = q;
+            }
         }
 
 
-        public void UnionList(SingleLinkedList<int> listA, SingleLinkedList<int> listB, SingleLinkedList<int> listC)
-        {
 
+        public int M_Search(SingleLinkedList<int> listA, SingleLinkedList<int> listB)
+        {
+            int n = (listA.ListLength() + listB.ListLength()) / 2;
+            var pA = listA.Head.Next;
+            var pB = listB.Head.Next;
+            int k = 0;
+            int result = 0;
+            while (k < n)
+            {
+                while (pA != null && pB != null)
+                {
+                    k++;
+                    if (pA.Data < pB.Data)
+                    {
+                        if (k == n)
+                        {
+                            result = pA.Data;
+                            return result;
+                        }
+                        pA = pA.Next;
+
+                    }
+                    else
+                    {
+                        if (k == n)
+                        {
+                            result = pB.Data;
+                            return result;
+                        }
+                        pB = pB.Next;
+                    }
+                }
+                while (pA != null)
+                {
+                    k++;
+                    if (k == n)
+                    {
+                        result = pA.Data;
+                        return result;
+                    }
+                    pA = pA.Next;
+                }
+                while (pB != null)
+                {
+                    k++;
+                    if (k == n)
+                    {
+                        result = pB.Data;
+                        return result;
+                    }
+                    pB = pB.Next;
+                }
+            }
+
+
+
+            return result;
+        }
+
+
+        public int M_Search(SequenceList<int> listA, SequenceList<int> listB)
+        {
+            int n = (listA.Length + listB.Length) / 2;
+            int k = 0;
+            int a = 0;
+            int b = 0;
+            while (a < listA.Length & b < listB.Length)
+            {
+                k++;
+                if (listA[a] < listB[b])
+                {
+                    if (k == n)
+                    {
+                        return listA[a];
+                    }
+                    a++;
+                }
+                else
+                {
+                    if (k == n)
+                    {
+                        return listB[b];
+                    }
+                    b++;
+                }
+            }
+            while (a < listA.Length)
+            {
+                k++;
+                if (k == n)
+                {
+                    return listA[a];
+                }
+                a++;
+            }
+            while (b < listB.Length)
+            {
+                k++;
+                if (k == n)
+                {
+                    return listB[b];
+                }
+                b++;
+            }
+            return 0;
+        }
+
+
+        public void DelRepetData(SequenceList<int> list)
+        {
+            int k = 1;
+            for (int i = 1; i < list.Length; i++)
+            {
+                if (list[i] != list[i - 1])
+                {
+                    list[k] = list[i];
+                    k++;
+                }
+            }
+            list.Length = k;
+        }
+
+        public void InterSect(SingleLinkedList<int> listA, SingleLinkedList<int> listB, SingleLinkedList<int> listC)
+        {
+            var pA = listA.Head.Next;
+            var pB = listB.Head.Next;
+            var r = listC.Head;
+            while (pA != null && pB != null)
+            {
+                if (pA.Data < pB.Data)
+                {
+                    pA = pA.Next;
+                }
+                if (pA.Data > pB.Data)
+                {
+                    pB = pB.Next;
+                }
+                if (pA.Data == pB.Data)
+                {
+                    var s = new Node<int>();
+                    s.Data = pA.Data;
+
+                 
+                    r.Next = s;
+                    r = s;
+
+                    pA = pA.Next;
+                    pB = pB.Next;
+                }
+            }
+            r.Next = null;
         }
     }
 }

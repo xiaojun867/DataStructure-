@@ -57,14 +57,31 @@ namespace DataStructure
             //OrderedList list = new OrderedList();
 
 
+            // SequenceList<int> listA = new SequenceList<int>(5);
+            // listA.CreateList(11,13,15,17,19);
+            // SequenceList<int> listB = new SequenceList<int>(5);
+            // listB.CreateList(2, 4, 6, 8,20);
+
+            // OrderedList list = new OrderedList();
+            //int i= list.M_Search(listA, listB);
+
+
+            //SequenceList<int> listS = new SequenceList<int>(6);
+            //listS.CreateList(1,1,1,2,2,3);
+
+            //OrderedList list = new OrderedList();
+            //list.DelRepetData(listS);
+
+
+            OrderedList list = new OrderedList();
+
             SingleLinkedList<int> listA = new SingleLinkedList<int>();
-            listA.CreatListL(1, 3, 5);
+            listA.CreatListL(1,2,3);
             SingleLinkedList<int> listB = new SingleLinkedList<int>();
-            listB.CreatListL(2, 4, 6, 8);
+            listB.CreatListL(2,3,4);
 
             SingleLinkedList<int> listC = new SingleLinkedList<int>();
-            OrderedList list = new OrderedList();
-            list.UnionList(listA, listB, listC);
+            list.InterSect(listA, listB, listC);
 
         }
     }

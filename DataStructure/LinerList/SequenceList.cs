@@ -11,7 +11,7 @@ namespace DataStructure.LinerList
     {
         public T[] Data { get; set; }
         private int _length;
-        public int Length { get { return _length; } }
+        public int Length { get; set; }
 
         public T this[int index] { get { return Data[index]; } set { Data[index] = value; } }
         public SequenceList(int maxSize, params T[] t)
@@ -30,7 +30,7 @@ namespace DataStructure.LinerList
             {
                 Data[i] = t[i];
             }
-            this._length = t.Length;
+            this.Length = t.Length;
         }
 
         public void InitList()
