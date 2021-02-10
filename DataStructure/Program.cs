@@ -73,15 +73,18 @@ namespace DataStructure
             //list.DelRepetData(listS);
 
 
-            OrderedList list = new OrderedList();
+            //OrderedList list = new OrderedList();
 
-            SingleLinkedList<int> listA = new SingleLinkedList<int>();
-            listA.CreatListL(1,2,3);
-            SingleLinkedList<int> listB = new SingleLinkedList<int>();
-            listB.CreatListL(2,3,4);
+            //SingleLinkedList<int> listA = new SingleLinkedList<int>();
+            //listA.CreatListL(1,2,3);
+            //SingleLinkedList<int> listB = new SingleLinkedList<int>();
+            //listB.CreatListL(2,3,4);
 
-            SingleLinkedList<int> listC = new SingleLinkedList<int>();
-            list.InterSect(listA, listB, listC);
+            //SingleLinkedList<int> listC = new SingleLinkedList<int>();
+            //list.InterSect(listA, listB, listC);
+
+
+            
 
         }
     }

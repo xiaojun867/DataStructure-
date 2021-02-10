@@ -8,13 +8,13 @@ namespace DataStructure.LinerList
     public class SingleLinkedList<T>
     {
         public int _count;
-        public Node<T> Head = new Node<T>();
+        public LinkedListNode<T> Head = new LinkedListNode<T>();
         public int Count { get { return _count; } }
         public void CreatListF(params T[] arrT)
         {
             for (int i = 0; i < arrT.Length; i++)
             {
-                Node<T> node = new Node<T>(arrT[i]);
+                LinkedListNode<T> node = new LinkedListNode<T>(arrT[i]);
                 node.Next = Head.Next;
                 Head.Next = node;
                 _count++;
@@ -23,10 +23,10 @@ namespace DataStructure.LinerList
         }
         public void CreatListL(params T[] arrT)
         {
-            Node<T> point = Head;
+            LinkedListNode<T> point = Head;
             for (int i = 0; i < arrT.Length; i++)
             {
-                Node<T> node = new Node<T>(arrT[i]);
+                LinkedListNode<T> node = new LinkedListNode<T>(arrT[i]);
                 point.Next = node;
                 point = node;
                 _count++;
@@ -134,7 +134,7 @@ namespace DataStructure.LinerList
             }
             else
             {
-                Node<T> nodeNew = new Node<T>(t);
+                LinkedListNode<T> nodeNew = new LinkedListNode<T>(t);
                 nodeNew.Next = p.Next;
                 p.Next = nodeNew;
             }
@@ -215,7 +215,7 @@ namespace DataStructure.LinerList
             var p = list.Head.Next.Next;
             var pre = list.Head.Next;
             list.Head.Next.Next = null;
-            var q = new Node<int>();
+            var q = new LinkedListNode<int>();
             while (p != null)
             {
                 q = p.Next;
@@ -239,7 +239,7 @@ namespace DataStructure.LinerList
             var p = list.Head.Next;
             var pre = list.Head;
             list.Head.Next = null;
-            var q = new Node<T>();
+            var q = new LinkedListNode<T>();
             while (p != null)
             {
                 q = p.Next;
@@ -259,7 +259,7 @@ namespace DataStructure.LinerList
             var p = list.Head.Next;
             var list1 = list.Head;
             var point = list1;
-            var list2 = new Node<T>();
+            var list2 = new LinkedListNode<T>();
 
             while (p != null)
             {
@@ -346,16 +346,16 @@ namespace DataStructure.LinerList
             #endregion
         }
     }
-    public class Node<T>
+    public class LinkedListNode<T>
     {
         public T Data { get; set; }
-        public Node<T> Next { get; set; }
-        public Node(T t)
+        public LinkedListNode<T> Next { get; set; }
+        public LinkedListNode(T t)
         {
             Data = t;
             Next = null;
         }
-        public Node()
+        public LinkedListNode()
         {
             Data = default(T);
             Next = null;

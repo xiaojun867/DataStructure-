@@ -5,20 +5,22 @@ using System.Text;
 namespace DataStructure.LinerList
 {
     /// <summary>
-    /// 顺序表
+    /// 线性表--顺序存储
     /// </summary>
     public class SequenceList<T>
     {
-        public T[] Data { get; set; }
-        private int _length;
+        private T[] Data { get; set; }
         public int Length { get; set; }
-
         public T this[int index] { get { return Data[index]; } set { Data[index] = value; } }
+
+        public bool IsEmpty { get { return this.Length == 0; }  }
+
         public SequenceList(int maxSize, params T[] t)
         {
             Data = new T[maxSize];
             CreateList(t);
         }
+
         public void CreateList(params T[] t)
         {
             if (t.Length > Data.Length)
@@ -32,33 +34,23 @@ namespace DataStructure.LinerList
             }
             this.Length = t.Length;
         }
-
         public void InitList()
         {
-            this._length = 0;
+            this.Length = 0;
         }
         public void DestroyList()
         {
-            this._length = 0;
+            this.Length = 0;
             this.Data = null;
-        }
-        public bool ListEmpty()
-        {
-            return this._length == 0;
-        }
-        public int ListLength()
-        {
-            return this.Length;
         }
         public void DispList()
         {
-            if (this.ListEmpty()) return;
+            if (this.IsEmpty) return;
             for (int i = 0; i < this.Length; i++)
             {
                 Console.WriteLine(Data[i]);
             }
         }
-
         public T GetElem(int index)
         {
             if (index < 1 || index > this.Length)
@@ -105,7 +97,6 @@ namespace DataStructure.LinerList
             #endregion
             return (false, 0);
         }
-
         public void ListInsert(int index, T t)
         {
             if (this.Length == Data.Length)
@@ -125,10 +116,9 @@ namespace DataStructure.LinerList
                     Data[i] = Data[i - 1];
                 }
                 Data[index - 1] = t;
-                this._length++;
+                this.Length++;
             }
         }
-
         public T ListDelete(int index)
         {
             if (index < 1 || index > this.Length)
@@ -143,11 +133,10 @@ namespace DataStructure.LinerList
                 {
                     Data[i] = Data[i + 1];
                 }
-                this._length--;
+                this.Length--;
                 return t;
             }
         }
-
         public void DelElem1(T t)
         {
             int k = 0;
@@ -159,7 +148,7 @@ namespace DataStructure.LinerList
                     k++;
                 }
             }
-            this._length = k;
+            this.Length = k;
         }
         public void DelElem2(T t)
         {
@@ -175,7 +164,7 @@ namespace DataStructure.LinerList
                     Data[i - k] = Data[i];
                 }
             }
-            this._length -= k;
+            this.Length -= k;
         }
         public void Move1(params int[] arrData)
         {
@@ -274,7 +263,6 @@ namespace DataStructure.LinerList
                 Console.WriteLine(arrData[x]);
             }
         }
-
         public void swap(ref int a, ref int b)
         {
             int temp = 0;

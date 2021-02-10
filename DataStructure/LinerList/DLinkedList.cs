@@ -4,6 +4,10 @@ using System.Text;
 
 namespace DataStructure.LinerList
 {
+    /// <summary>
+    /// 双链表
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class DLinkedList<T>
     {
         public DLinkedListNode<T> Head = new DLinkedListNode<T>();

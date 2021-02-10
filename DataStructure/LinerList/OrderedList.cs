@@ -4,22 +4,23 @@ using System.Text;
 
 namespace DataStructure.LinerList
 {
+    /// <summary>
+    /// 有序表
+    /// </summary>
     public class OrderedList
     {
-
         public void ListInsert(SequenceList<int> list, int e)
         {
             int i = 0;
-            while (list.Data[i] < e && i < list.Length)
+            while (list[i] < e && i < list.Length)
             {
                 i++;
             }
             for (int j = list.Length; j > i; j--)
             {
-                list.Data[j] = list.Data[j - 1];
+                list[j] = list[j - 1];
             }
-            list.Data[i] = e;
-
+            list[i] = e;
         }
         public void ListInsert(SingleLinkedList<int> list, int e)
         {
@@ -33,8 +34,6 @@ namespace DataStructure.LinerList
             p.Next = pre.Next;
             pre.Next = p;
         }
-
-
         /// <summary>
         /// 二路归并
         /// </summary>
@@ -121,9 +120,6 @@ namespace DataStructure.LinerList
                 pB = q;
             }
         }
-
-
-
         public int M_Search(SingleLinkedList<int> listA, SingleLinkedList<int> listB)
         {
             int n = (listA.ListLength() + listB.ListLength()) / 2;
@@ -182,8 +178,6 @@ namespace DataStructure.LinerList
 
             return result;
         }
-
-
         public int M_Search(SequenceList<int> listA, SequenceList<int> listB)
         {
             int n = (listA.Length + listB.Length) / 2;
@@ -230,8 +224,6 @@ namespace DataStructure.LinerList
             }
             return 0;
         }
-
-
         public void DelRepetData(SequenceList<int> list)
         {
             int k = 1;
@@ -245,7 +237,6 @@ namespace DataStructure.LinerList
             }
             list.Length = k;
         }
-
         public void InterSect(SingleLinkedList<int> listA, SingleLinkedList<int> listB, SingleLinkedList<int> listC)
         {
             var pA = listA.Head.Next;
