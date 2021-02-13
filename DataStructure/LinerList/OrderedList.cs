@@ -30,7 +30,7 @@ namespace DataStructure.LinerList
                 pre = pre.Next;
             }
 
-            var p = new Node<int>(e);
+            var p = new LinkedListNode<int>(e);
             p.Next = pre.Next;
             pre.Next = p;
         }
@@ -254,7 +254,7 @@ namespace DataStructure.LinerList
                 }
                 if (pA.Data == pB.Data)
                 {
-                    var s = new Node<int>();
+                    var s = new LinkedListNode<int>();
                     s.Data = pA.Data;
 
                  
