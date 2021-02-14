@@ -108,20 +108,14 @@ namespace DataStructure.Stack
             char[] s = str.ToCharArray();
             for (int i = 0; i < s.Length; i++)
             {
-               
-                if (i + 1 < s.Length)
+                if (linkedStack.GetTop() == '(' && s[i] == ')')
                 {
-                    if (linkedStack.GetTop()=='(' && linkedStack.GetTop() != s[i + 1])
-                    {
-                        linkedStack.Pop2();
-                        i++;
-                    }
-                    else
-                    {
-                        linkedStack.Push2(s[i]);
-                    }
+                    linkedStack.Pop2();
                 }
-
+                else
+                {
+                    linkedStack.Push2(s[i]);
+                }
             }
 
             if (!linkedStack.IsEmpty2)
@@ -137,7 +131,7 @@ namespace DataStructure.Stack
             LinkedStack<char> linkedStack = new LinkedStack<char>();
             linkedStack.InitLinkedStack();
             char[] s = str.ToCharArray();
-            bool symmetry = false;
+            bool symmetry = true;
             for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] == '(')
@@ -146,22 +140,14 @@ namespace DataStructure.Stack
                 }
                 else if (s[i] == ')')
                 {
-                    if (!linkedStack.IsEmpty2)
-                    {
-                        if (linkedStack.GetTop() != '(')
-                        {
-                            symmetry = false;
-                        }
-                        else
-                        {
-                            linkedStack.Pop2();
-                        }
-                    }
-                    else
+                    if (linkedStack.GetTop() != '(')
                     {
                         symmetry = false;
                     }
-                    
+                    else
+                    {
+                        linkedStack.Pop2();
+                    }
                 }
             }
             if (!linkedStack.IsEmpty2)

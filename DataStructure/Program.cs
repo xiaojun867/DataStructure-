@@ -89,10 +89,14 @@ namespace DataStructure
             //SeqStackApp sequenceStack = new SeqStackApp();
             //sequenceStack.IsSymmetry("123445453");
 
-            LinkedStackApp linkedStack = new LinkedStackApp();
+            //LinkedStackApp linkedStack = new LinkedStackApp();
             //Console.WriteLine(linkedStack.IsSymmetry2(")())"));
+            //Console.WriteLine(linkedStack.IsSymmetry2("()()"));
+            //Console.WriteLine(linkedStack.IsSymmetry2(")()"));
+            //Console.WriteLine(linkedStack.IsSymmetry2("(()))"));
 
-            Console.WriteLine(linkedStack.IsSymmetry("()(())"));
+
+
 
         }
     }
