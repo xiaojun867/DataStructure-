@@ -1,4 +1,5 @@
 ﻿using DataStructure.LinerList;
+using DataStructure.Maze;
 using DataStructure.Stack;
 using System;
 using System.Collections.Generic;
@@ -96,7 +97,10 @@ namespace DataStructure
             //Console.WriteLine(linkedStack.IsSymmetry2("(()))"));
 
 
-
+            //MazeByStack mazeByStack = new MazeByStack();
+            //mazeByStack.MgPath(1, 1, 8, 8);
+            MazeByQueue mazeByQueue = new MazeByQueue();
+            mazeByQueue.MgPath(1, 1, 8, 8);
 
         }
     }

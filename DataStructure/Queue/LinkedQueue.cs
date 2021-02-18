@@ -75,10 +75,10 @@ namespace DataStructure.Queue
             return t;
         }
     }
-}
-public class LinkedQueueNode<T>
-{
-    public T Data { get; set; }
-    public LinkedQueueNode<T> Next { get; set; }
-}
+
+    public class LinkedQueueNode<T>
+    {
+        public T Data { get; set; }
+        public LinkedQueueNode<T> Next { get; set; }
+    }
 }
