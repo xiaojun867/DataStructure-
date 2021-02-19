@@ -4,33 +4,60 @@ using System.Text;
 
 namespace DataStructure.LinerList
 {
+    /// <summary>
+    /// 循环链表
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class CircularLinkedList<T>
     {
-        /// <summary>
-        /// 循环双链表
-        /// </summary>
-        /// <param name="list"></param>
-        public DLinkedList<T> CreateD(DLinkedList<T> list)
-        {
-            var p = list.Head;
+        public DLinkedListNode<T> head { get; set; }
 
-            while (p != null)
+        public void CreateD(params T[] arr)
+        {
+            head = new DLinkedListNode<T>();
+            head.Next = head;
+            head.Prior = head;
+            var r = head;
+            for (int i = 0; i < arr.Length; i++)
             {
-                var q = p.Next;
-                if (p.Next == null)
+                var s = new DLinkedListNode<T>();
+                s.Data = arr[i];
+                if (head.Next == head)
                 {
-                    p.Next = list.Head;
-                    list.Head.Prior = p;
+                    head.Next = s;
+                    s.Next = head;
+                    s.Prior = head;
+                    r = s;
                 }
-                p = q;
-
+                else
+                {
+                    s.Next = r.Next;
+                    r.Next.Prior = s;
+                    s.Prior = r;
+                    r.Next = s;
+                    r = s;
+                }
             }
-            return list;
         }
 
-        public int Equal(DLinkedList<int> list)
+
+        public bool IsSymmetric()
         {
-            return 0;
+            bool b = true;
+            var p = head.Next;
+            var q = head.Prior;
+            while (p != q && p.Next != q)
+            {
+                if (!object.Equals(p.Data, q.Data))
+                {
+                    b = false;
+                    break;
+                }
+                p = p.Next;
+                q = q.Prior;
+            }
+            return b;
         }
+
     }
 }

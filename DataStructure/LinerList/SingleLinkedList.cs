@@ -5,6 +5,10 @@ using System.Text;
 
 namespace DataStructure.LinerList
 {
+    /// <summary>
+    /// 单链表
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SingleLinkedList<T>
     {
         public int _count;

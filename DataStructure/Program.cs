@@ -32,12 +32,33 @@ namespace DataStructure
             //list.ListDelete(3);
             //list.Reverse(list);
 
-            // CircularLinkedList<int> listC = new CircularLinkedList<int>();
-            //list= listC.CreateD(list);
-            //是否对称相等不懂
-            //listC.Equal(list);
-            //第三讲不懂
+            //CircularLinkedList<int> listC = new CircularLinkedList<int>();
+            //listC.CreateD(1,1,2,3,2,1,1);
+            //Console.WriteLine(listC.IsSymmetric());
 
+
+            //线性表的应用
+            //Console.WriteLine("创建表1");
+            //LinerListApp<int> linerListApp1 = new LinerListApp<int>();
+            //linerListApp1.CreateTable(3, 3);
+
+            //Console.WriteLine("创建表2");
+            //LinerListApp<int> linerListApp2 = new LinerListApp<int>();
+            //linerListApp2.CreateTable(3, 2);
+
+            //LinerListApp<int> linerListApp = new LinerListApp<int>();
+            //linerListApp.LinkTable(linerListApp1.Head, linerListApp2.Head, 3, 1);
+
+            //Console.WriteLine("链接结果");
+            //linerListApp.DispTable();
+
+            //linerListApp.DestroyTable();
+            //linerListApp1.DestroyTable();
+            //linerListApp2.DestroyTable();
+
+            //HNode<int> h1 = linerListApp1.Head;
+            //HNode<int> h2 = linerListApp2.Head;
+            //HNode<int> h = linerListApp.Head;
 
 
             //SequenceList<int> listSeq = new SequenceList<int>(5);
@@ -99,8 +120,8 @@ namespace DataStructure
 
             //MazeByStack mazeByStack = new MazeByStack();
             //mazeByStack.MgPath(1, 1, 8, 8);
-            MazeByQueue mazeByQueue = new MazeByQueue();
-            mazeByQueue.MgPath(1, 1, 8, 8);
+            //MazeByQueue mazeByQueue = new MazeByQueue();
+            //mazeByQueue.MgPath(1, 1, 8, 8);
 
         }
     }

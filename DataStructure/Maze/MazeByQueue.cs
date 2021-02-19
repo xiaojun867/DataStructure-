@@ -39,7 +39,7 @@ namespace DataStructure.Maze
                 j = qt.data[qt.front].j;
                 if (i == xe && j == ye)
                 {
-                    for (int k = qt.front; k > 0; k = qt.data[k].pre)
+                    for (int k = qt.front; k >= 0; k = qt.data[k].pre)
                     {
                         Console.Write($"[{qt.data[k].i},{qt.data[k].j}]");
                     }
