@@ -113,8 +113,7 @@ namespace DataStructure.String
         {
             int i = 0;
             int j = 0;
-            int k = 0;
-            int result = 0;
+            int result = -1;
             while (i < s.Length && j < t.Length)
             {
                 if (s[i] == t[j])
@@ -124,11 +123,19 @@ namespace DataStructure.String
                 }
                 else
                 {
-                    i = ++k;
+                    i = i - j + 1;
                     j = 0;
-                    result = k;
+                    result = i;
                 }
             }
+            //if (j >= t.Length)
+            //{
+            //    return i - t.Length;
+            //}
+            //else
+            //{
+            //    return -1;
+            //}
             return result;
         }
 
