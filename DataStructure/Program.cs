@@ -1,6 +1,7 @@
 ﻿using DataStructure.LinerList;
 using DataStructure.Maze;
 using DataStructure.Stack;
+using DataStructure.String;
 using System;
 using System.Collections.Generic;
 
@@ -117,12 +118,25 @@ namespace DataStructure
             //Console.WriteLine(linkedStack.IsSymmetry2(")()"));
             //Console.WriteLine(linkedStack.IsSymmetry2("(()))"));
 
-
             //MazeByStack mazeByStack = new MazeByStack();
             //mazeByStack.MgPath(1, 1, 8, 8);
             //MazeByQueue mazeByQueue = new MazeByQueue();
             //mazeByQueue.MgPath(1, 1, 8, 8);
 
+            //char[] c = { 'a', 'b', 'c' };
+            //string str = new string(c);
+            //Console.WriteLine(str[1]);
+
+            SequenceString sequenceString = new SequenceString(10);
+            // sequenceString.strAssign('a','b','c');
+            //sequenceString.strCopy("abc");
+            Console.WriteLine(sequenceString.Index("lovovove", "ove", 0));
+            Console.WriteLine(sequenceString.Index2("lovovove", "ove")); 
+            //sequenceString.StrCompare("abc", "bcd");
+
+            //LinkedString linkedString = new LinkedString();
+            //linkedString.CreateTable('a', 'b', 'a', 'b', 'c');
+            //linkedString.Replace();
         }
     }
 }
