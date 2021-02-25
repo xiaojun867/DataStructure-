@@ -169,7 +169,8 @@ namespace DataStructure
             //Console.WriteLine(regex.IsMatch(pwd));
 
 
-          
+            Recursive recursive = new Recursive();
+            recursive.Hanoi(3, "x", "y", "z");
         }
     }
 }
