@@ -4,6 +4,8 @@ using DataStructure.Stack;
 using DataStructure.String;
 using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DataStructure
 {
@@ -138,8 +140,36 @@ namespace DataStructure
             //linkedString.CreateTable('a', 'b', 'a', 'b', 'c');
             //linkedString.Replace();
 
-            KMPString KMP = new KMPString();
-            KMP.GetNext("ab");
+            //KMPString KMP = new KMPString();
+            //KMP.GetNext("ab");
+
+            //string pwd = "abcdef";
+            //char[] array = pwd.ToCharArray();
+            //int num = array.Length / 2;//奇偶组数
+            //StringBuilder sb = new StringBuilder();
+            //if (array.Length % 2 == 0)
+            //{
+            //    for (int i = 0; i < num; i++)
+            //    {
+            //        sb.Append(array[i]).Append(array[i + num]);
+            //    }
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < num; i++)
+            //    {
+            //        sb.Append(array[i]).Append(array[i + 1 + num]);
+            //    }
+            //    sb.Append(array[num]);
+            //}
+            //Console.WriteLine(sb.ToString());
+
+            //Regex regex = new Regex("(^[0-9]+$)|(^[a-z]+$)|(^[A-Z]+$)");
+            //string pwd = "qweasdzxc";
+            //Console.WriteLine(regex.IsMatch(pwd));
+
+
+          
         }
     }
 }
