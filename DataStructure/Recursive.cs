@@ -1,7 +1,4 @@
-﻿using DataStructure.LinerList;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 
 namespace DataStructure
 {
@@ -32,7 +29,6 @@ namespace DataStructure
                 return n + Accumulation(n - 1);
             }
         }
-
         public int Fibonacci(int n)
         {
             if (n == 1 || n == 2)
@@ -44,7 +40,6 @@ namespace DataStructure
                 return Fibonacci(n - 1) * Fibonacci(n - 2);
             }
         }
-
         /// <summary>
         /// xiangbumingbai
         /// </summary>
@@ -66,7 +61,6 @@ namespace DataStructure
         {
             Console.WriteLine($"移动{x}-->{z}");
         }
-
         public int Min(int[] arr, int n)
         {
             int m = 0;
@@ -110,7 +104,6 @@ namespace DataStructure
             TraverseR(list.Next);
             Console.WriteLine(list.Data);
         }
-
         #region 递归求解迷宫
         public class Box
         {
@@ -124,25 +117,34 @@ namespace DataStructure
             public int Length { get; set; }
             public PathType()
             {
-                Data = new Box[10];
+                Data = new Box[100];
             }
         }
         private int[,] mg = new int[,] {
-            {1,1,1,1,1,1,1,1,1,1},
-            {1,0,0,1,0,0,0,1,0,1},
-            {1,0,0,1,0,0,0,1,0,1},
-            {1,0,0,0,0,1,1,0,0,1},
-            {1,0,1,1,1,0,0,0,0,1},
-            {1,0,0,0,1,0,0,0,0,1},
-            {1,0,1,0,0,0,1,0,0,1},
-            {1,0,1,1,1,0,1,1,0,1},
-            {1,1,0,0,0,0,0,0,0,1},
-            {1,1,1,1,1,1,1,1,1,1}
+            //{1,1,1,1,1,1,1,1,1,1},
+            //{1,0,0,1,0,0,0,1,0,1},
+            //{1,0,0,1,0,0,0,1,0,1},
+            //{1,0,0,0,0,1,1,0,0,1},
+            //{1,0,1,1,1,0,0,0,0,1},
+            //{1,0,0,0,1,0,0,0,0,1},
+            //{1,0,1,0,0,0,1,0,0,1},
+            //{1,0,1,1,1,0,1,1,0,1},
+            //{1,1,0,0,0,0,0,0,0,1},
+            //{1,1,1,1,1,1,1,1,1,1}
+            {1,1,1,1,1,1},
+            {1,0,0,0,1,1},
+            {1,0,1,0,0,1},
+            {1,0,0,0,1,1},
+            {1,1,0,0,0,1},
+            {1,1,1,1,1,1}
         };
-        public void mgPath(int xi,int yi,int xe,int ye,PathType path)
+        public void mgPath(int xi, int yi, int xe, int ye, PathType path)
         {
-          
+
         }
         #endregion
+
+
+
     }
 }

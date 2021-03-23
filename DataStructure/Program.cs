@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using static DataStructure.Recursive;
 
 namespace DataStructure
 {
@@ -169,8 +170,9 @@ namespace DataStructure
             //Console.WriteLine(regex.IsMatch(pwd));
 
 
-            Recursive recursive = new Recursive();
-            recursive.Hanoi(3, "x", "y", "z");
+            //Recursive recursive = new Recursive();
+            //PathType path = new PathType();
+            //recursive.mgPath(1, 1, 4, 4,path);
         }
     }
 }
