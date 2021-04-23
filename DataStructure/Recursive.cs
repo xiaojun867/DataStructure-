@@ -144,10 +144,5 @@ namespace DataStructure
         }
         #endregion
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e186eb99be2f201fc617405755a8091270e10e0
     }
 }

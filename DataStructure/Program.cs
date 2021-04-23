@@ -1,7 +1,9 @@
 ﻿using DataStructure.LinerList;
 using DataStructure.Maze;
+using DataStructure.Searching;
 using DataStructure.Stack;
 using DataStructure.String;
+using DataStructure.Tree;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -173,6 +175,20 @@ namespace DataStructure
             //Recursive recursive = new Recursive();
             //PathType path = new PathType();
             //recursive.mgPath(1, 1, 4, 4,path);
+
+
+            //BinaryTree bTree = new BinaryTree();
+
+            //bTree.CreateBTreeByPreOrde(new BTNode());
+
+            //bTree.PreOrderTraverse(BinaryTree.node);
+
+
+
+            Console.WriteLine("查找");
+            SequentialSearch seqSearch = new SequentialSearch();
+            int[] arr = new int[] { 1,2,3};
+            seqSearch.Search(arr, 4);
         }
     }
 }

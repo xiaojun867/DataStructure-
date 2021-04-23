@@ -9,18 +9,69 @@ namespace DataStructure.Tree
     /// </summary>
     public class BinaryTree
     {
-        public BTNode Create(string str)
+        public static BTNode node = new BTNode();
+        public void CreateBTreeByPreOrde(BTNode node)
         {
-            str = "A(B(D(,G)),C(E,F))";
-            char[] arrChar = str.ToCharArray();
-            BTNode node = new BTNode();
-            for (int i = 0; i < arrChar.Length; i++)
+            string input = Console.ReadLine();
+            
+            if (input == "#")
             {
-
-
+                node = null;
+            }
+            else
+            {
+                node = new BTNode();
+                node.Data = input;
+                CreateBTreeByPreOrde(node.LBtNode);
+                CreateBTreeByPreOrde(node.RBtNode);
             }
         }
+
+        /// <summary>
+        /// 前序遍历
+        /// </summary>
+        public void PreOrderTraverse(BTNode node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+            Console.WriteLine(node.Data);
+            PreOrderTraverse(node.LBtNode);
+            PreOrderTraverse(node.RBtNode);
+        }
+
+        /// <summary>
+        /// 中序遍历
+        /// </summary>
+        /// <param name="node"></param>
+        public void MiddleOrder(BTNode node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+            MiddleOrder(node.LBtNode);
+            Console.WriteLine(node.Data);
+            MiddleOrder(node.RBtNode);
+        }
+
+        /// <summary>
+        /// 后序遍历
+        /// </summary>
+        public void PostScript(BTNode node)
+        {
+            if (node == null)
+            {
+                return;
+            }
+            PostScript(node.LBtNode);
+            PostScript(node.RBtNode);
+            Console.WriteLine(node.Data);
+        }
+
     }
+
     public class BTNode
     {
         public string Data { get; set; }
