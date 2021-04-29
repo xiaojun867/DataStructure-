@@ -5,6 +5,7 @@ using DataStructure.Stack;
 using DataStructure.String;
 using DataStructure.Tree;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -186,9 +187,7 @@ namespace DataStructure
 
 
             Console.WriteLine("查找");
-            SequentialSearch seqSearch = new SequentialSearch();
-            int[] arr = new int[] { 1,2,3};
-            seqSearch.Search(arr, 4);
+           //HashCode
         }
     }
 }

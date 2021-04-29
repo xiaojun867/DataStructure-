@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DataStructure.Tree
 {
+    /// <summary>
+    /// 线索二叉树？？？？？？？？？
+    /// </summary>
     public class ThrBinaryTree
     {
         /// <summary>
